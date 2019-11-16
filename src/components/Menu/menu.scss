@@ -1,0 +1,25 @@
+.todo__list {
+    li {
+      display: flex;
+      align-items: center;      
+      cursor: pointer;
+      padding: 10px 12px;
+      margin-bottom: 5px;
+
+      &.active {
+        background: #ffffff;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 4px;        
+      }
+
+      i {      
+        margin-right: 10px;
+        display: inline-flex;
+
+        img {
+          height: 16px;
+          opacity: 0.6;
+        }
+      }
+    }   
+  }

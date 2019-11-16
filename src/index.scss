@@ -2,10 +2,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-body {
-  font-family: -apple-system, Roboto, system-ui, sans-serif;
+  font-family: -apple-system, 'Roboto', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,9 +19,16 @@ code {
   width: 750px;
   height: 530px;
   transform: translate(-50%, -50%);
+  box-shadow: 1px 2px 20px #c4c4c4;
+  border-radius: 10px;
+  overflow: hidden;
 
   &__sidebar {
     background-color: #ededee;
     width: 200px;
-  }
+    height: 100%;
+    border-right: 1px solid #c4c4c4;
+    padding: 60px 20px;   
+  }  
+  
 }
