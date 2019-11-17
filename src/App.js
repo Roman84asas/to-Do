@@ -1,50 +1,62 @@
 import React from 'react';
 import listSvg from './assets/img/list.svg';
 
-import Index from './components/Menu/index';
+import Menu from './components/Menu';
 
 import './index.scss';
+import AddButton from "./components/AddButton";
 
 function App() {
-  return (
-    <div className="todo">
-      <div className="todo__sidebar">
-        <Index items={[
-          {
-            id: 1,
-            icon: listSvg,
-            name: 'All tasks'
-          }
-        ]} />
 
-        <Index items={[
-          {
-            id: 1,
-            color: 'red',
-            name: 'Price'
-          }
-        ]} />
 
-          <Index items={[
-              {
-                  id: 1,
-                  color: 'yellow',
-                  name: 'Front-End'
-              }
-          ]} />
+    return (
 
-          <Index items={[
-              {
-                  id: 1,
-                  color: 'green',
-                  name: 'Back-End'
-              }
-          ]} />
+        <div className="todo">
+            <div className="todo__sidebar">
+                <Menu
+                    items={[
+                        {
+                            id: 1,
+                            icon: listSvg,
+                            name: 'All tasks',
+                        }
+                    ]}
+                />
 
-        <div className="todo__tasks">asdfdsgdfgh</div>
-      </div>      
-    </div>
-  );
+                <Menu
+                    items={[
+                        {
+                            id: 2,
+                            color: 'red',
+                            name: 'Price',
+                            active: true
+                        },
+                        {
+                            id: 13,
+                            color: 'blue',
+                            name: 'Front-End'
+                        },
+                        {
+                            id: 4,
+                            color: 'green',
+                            name: 'Back-End'
+                        },
+                        {
+                            id: 5,
+                            color: 'yellow',
+                            name: 'Tasks'
+                        }
+                    ]}
+                 isRemovable={true}
+                />
+
+                <AddButton/>
+            </div>
+
+
+        </div>
+
+    );
 }
 
 export default App;

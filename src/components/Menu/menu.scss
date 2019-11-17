@@ -1,25 +1,65 @@
-.todo__list {
-    li {
-      display: flex;
-      align-items: center;      
-      cursor: pointer;
-      padding: 10px 12px;
-      margin-bottom: 5px;
+.list {
+  margin-bottom: 30px;
 
-      &.active {
-        background: #ffffff;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        border-radius: 4px;        
+  &__add-button {
+    -webkit-transition: all 0.6s ease-in-out;
+    span {
+      color: #767676;
+    }
+
+    &:hover {
+      -webkit-transition: all 0.6s ease-in-out;
+      img {
+        opacity: 1;
       }
 
-      i {      
-        margin-right: 10px;
-        display: inline-flex;
-
-        img {
-          height: 16px;
-          opacity: 0.6;
-        }
+      span {
+        color: black;
       }
-    }   
+    }
   }
+
+  li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 12px;
+
+    &.active {
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+
+    i {
+      margin-right: 7px;
+      display: inline-flex;
+
+      img {
+        height: 14px;
+        opacity: 0.6;
+      }
+    }
+
+    .badge {
+      width: 10px;
+      height: 10px;
+      border-radius: 30px;
+      position: relative;
+      left: 5px;
+
+      &--green {
+        background-color: #42b883;
+      }
+      &--blue {
+        background-color: #2a5eb8;
+      }
+      &--red {
+        background-color: #b80e18;
+      }
+      &--yellow {
+        background-color: #b8ae0f;
+      }
+    }
+  }
+}

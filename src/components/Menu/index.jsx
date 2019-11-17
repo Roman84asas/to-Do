@@ -1,16 +1,21 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './menu.scss';
 
 
-const Menu = ({items}) => {
+const Menu = ({items, isRemovable, onClick}) => {
     return (
-        <ul className="todo__list">
+        <ul onClick={onClick} className="list">
             {
                 items.map((item) => (
-                    <li className="active" key={item.id}>
+                    <li className={classNames(item.className, {'active': item.active})} key={item.id}>
                         <i>
-                            {item.icon ? <img src={item.icon} alt="mage from list tasks"/> : <i className={`badge badge--${item.color}`}></i>}
+                            {item.icon ? (
+                                <img src={item.icon} alt="Img list"/>
+                            ) : (
+                                <i className={`badge badge--${item.color}`}></i>
+                            )}
                         </i>
 
                         <span>

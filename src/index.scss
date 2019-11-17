@@ -21,14 +21,27 @@ code {
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 20px #c4c4c4;
   border-radius: 10px;
-  overflow: hidden;
 
   &__sidebar {
     background-color: #ededee;
     width: 200px;
-    height: 100%;
+    height: calc(100% - 120px);
     border-right: 1px solid #c4c4c4;
     padding: 60px 20px;   
-  }  
-  
+  }
+}
+
+.field {
+  background: white;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  -webkit-transition: all 0.4s ease-in-out;
+
+  &:hover {
+    border-color: #767676;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
 }
