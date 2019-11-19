@@ -31,6 +31,23 @@ code {
   }
 }
 
+.button {
+  background: #4f57b8;
+  border-radius: 4px;
+  color: white;
+  border: 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background: darken(#4f57b8, 10%);
+    color: white;
+    -webkit-transition: all 0.4s ease-in-out;
+  }
+}
+
 .field {
   background: white;
   border: 1px solid #c4c4c4;

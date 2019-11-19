@@ -40,26 +40,5 @@
         opacity: 0.6;
       }
     }
-
-    .badge {
-      width: 10px;
-      height: 10px;
-      border-radius: 30px;
-      position: relative;
-      left: 5px;
-
-      &--green {
-        background-color: #42b883;
-      }
-      &--blue {
-        background-color: #2a5eb8;
-      }
-      &--red {
-        background-color: #b80e18;
-      }
-      &--yellow {
-        background-color: #b8ae0f;
-      }
-    }
   }
 }

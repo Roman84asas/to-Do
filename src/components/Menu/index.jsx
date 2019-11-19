@@ -1,7 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import Badge from "../Badge";
+
 
 import './menu.scss';
+
 
 
 const Menu = ({items, isRemovable, onClick}) => {
@@ -14,7 +17,7 @@ const Menu = ({items, isRemovable, onClick}) => {
                             {item.icon ? (
                                 <img src={item.icon} alt="Img list"/>
                             ) : (
-                                <i className={`badge badge--${item.color}`}></i>
+                                <Badge color={item.color}/>
                             )}
                         </i>
 

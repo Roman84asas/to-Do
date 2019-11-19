@@ -1,5 +1,8 @@
 import React from 'react';
-import listSvg from './assets/img/list.svg';
+import listSvg from './assets/img/list.svg'
+
+
+import db from './assets/db';
 
 import Menu from './components/Menu';
 
@@ -50,7 +53,7 @@ function App() {
                  isRemovable={true}
                 />
 
-                <AddButton/>
+                <AddButton colors={db.colors}/>
             </div>
 
 
