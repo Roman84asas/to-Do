@@ -9,24 +9,22 @@ import './menu.scss';
 
 const Menu = ({items, isRemovable, onClick}) => {
     return (
-        <ul onClick={onClick} className="list">
-            {
-                items.map((item) => (
-                    <li className={classNames(item.className, {'active': item.active})} key={item.id}>
-                        <i>
-                            {item.icon ? (
-                                <img src={item.icon} alt="Img list"/>
-                            ) : (
-                                <Badge color={item.color}/>
-                            )}
-                        </i>
+        <ul onClick={onClick} className="list" >
+            {items.map((item) => (
+                <li className={classNames(item.className, {'active': item.active})} key={item.id}>
+                    <i>
+                        {item.icon ? (
+                            <img src={item.icon} alt="Img list"/>
+                        ) : (
+                            <Badge color={item.color}/>
+                        )}
+                    </i>
 
-                        <span>
-                            {item.name}
-                        </span>
-                    </li>
-                ))
-            }
+                    <span>
+                        {item.name}
+                    </span>
+                </li>
+            ))}
         </ul>
     )
 };

@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Menu from './components/Menu';
+import AddButton from "./components/AddButton";
 import listSvg from './assets/img/list.svg'
-
-
 import db from './assets/db';
 
-import Menu from './components/Menu';
 
 import './index.scss';
-import AddButton from "./components/AddButton";
 
 function App() {
+const [lists, setLists] = useState(
+    db.lists.map(item => {
+        item.color = db.colors.filter(color => color.id === item.colorId)[0].name;
+        return item;
+    }
+));
 
+const onAddList = (obj) => {
+    const newList = [
+        ...lists,
+        obj
+    ];
+    setLists(newList);
+};
 
     return (
 
@@ -19,7 +30,7 @@ function App() {
                 <Menu
                     items={[
                         {
-                            id: 1,
+                            id: 100,
                             icon: listSvg,
                             name: 'All tasks',
                         }
@@ -27,33 +38,14 @@ function App() {
                 />
 
                 <Menu
-                    items={[
-                        {
-                            id: 2,
-                            color: 'red',
-                            name: 'Price',
-                            active: true
-                        },
-                        {
-                            id: 13,
-                            color: 'blue',
-                            name: 'Front-End'
-                        },
-                        {
-                            id: 4,
-                            color: 'green',
-                            name: 'Back-End'
-                        },
-                        {
-                            id: 5,
-                            color: 'yellow',
-                            name: 'Tasks'
-                        }
-                    ]}
-                 isRemovable={true}
+                    items={lists}
+                    isRemovable={true}
                 />
 
-                <AddButton colors={db.colors}/>
+                <AddButton
+                    onAdd={onAddList}
+                    colors={db.colors}
+                />
             </div>
 
 

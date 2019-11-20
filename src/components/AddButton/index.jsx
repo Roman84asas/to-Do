@@ -8,9 +8,18 @@ import Badge from "../Badge";
 import './AddButton.scss';
 
 
-const AddButton = ({colors}) => {
+const AddButton = ({colors, onAdd}) => {
     const [visiblePopup, setVisiblePopup] = useState(false);
+    const [inputValue, setInputValue]     = useState('');
     const [getColor, setColor]            = useState(colors[0].id);
+
+    const addList = () => {
+        if(!inputValue) {
+            alert('Enter list`s name');
+            return;
+        }
+        onAdd({id: Math.random(), name: inputValue, color: colors.filter(color => color.id === getColor)[0].name})
+    };
 
     return (
        <div className="add-list">
@@ -37,9 +46,11 @@ const AddButton = ({colors}) => {
                    />
 
                    <input
+                       value       ={inputValue}
                        type        ="text"
                        placeholder ="Add name list"
                        className   ="field"
+                       onChange    ={e => setInputValue(e.target.value)}
                    />
 
                    <div className="add-list__popup-colors">
@@ -56,7 +67,11 @@ const AddButton = ({colors}) => {
                        </ul>
                    </div>
 
-                   <button className="button">Add list..</button>
+                   <button
+                       onClick={addList}
+                       className="button">
+                       Add list..
+                   </button>
                </div>)
            }
        </div>

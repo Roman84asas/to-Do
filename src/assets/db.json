@@ -2,9 +2,9 @@
   "lists": [
     { "id": 1, "name": "Price", "colorId": 5 },
     { "id": 2, "name": "Frontend", "colorId": 4 },
-    { "id": 2, "name": "Backend", "colorId": 3 },
-    { "id": 3, "name": "Books", "colorId": 2 },
-    { "id": 4, "name": "Tasks", "colorId": 1 }
+    { "id": 3, "name": "Backend", "colorId": 3 },
+    { "id": 4, "name": "Books", "colorId": 2 },
+    { "id": 5, "name": "Tasks", "colorId": 1 }
   ],
   "tasks": [
     { "id": 1, "listId": 2, "text": "Learn JavaScript" },
