@@ -18,7 +18,11 @@ const AddButton = ({colors, onAdd}) => {
             alert('Enter list`s name');
             return;
         }
-        onAdd({id: Math.random(), name: inputValue, color: colors.filter(color => color.id === getColor)[0].name})
+        const color = colors.filter(color => color.id === getColor)[0].name;
+        onAdd({id: Math.random(), name: inputValue, color: color});
+        setVisiblePopup(false);
+        setInputValue("");
+        setColor(colors[0].id);
     };
 
     return (
