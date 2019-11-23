@@ -13,6 +13,7 @@ code {
 }
 
 .todo {
+  display: flex;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -29,7 +30,15 @@ code {
     border-right: 1px solid #c4c4c4;
     padding: 60px 20px;   
   }
+
+  &__tasks {
+    flex: 1;
+    padding: 60px;
+
+  }
 }
+
+
 
 .button {
   background: #4f57b8;

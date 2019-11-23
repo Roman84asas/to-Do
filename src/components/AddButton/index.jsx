@@ -13,6 +13,12 @@ const AddButton = ({colors, onAdd}) => {
     const [inputValue, setInputValue]     = useState('');
     const [getColor, setColor]            = useState(colors[0].id);
 
+    const onClose = () => {
+        setVisiblePopup(false);
+        setInputValue("");
+        setColor(colors[0].id);
+    };
+
     const addList = () => {
         if(!inputValue) {
             alert('Enter list`s name');
@@ -20,9 +26,7 @@ const AddButton = ({colors, onAdd}) => {
         }
         const color = colors.filter(color => color.id === getColor)[0].name;
         onAdd({id: Math.random(), name: inputValue, color: color});
-        setVisiblePopup(false);
-        setInputValue("");
-        setColor(colors[0].id);
+        onClose();
     };
 
     return (
@@ -43,7 +47,7 @@ const AddButton = ({colors, onAdd}) => {
            {visiblePopup &&
                ( <div className="add-list__popup">
                    <img
-                       onClick={() => setVisiblePopup(false)}
+                       onClick   ={onClose}
                        src       ={cancelPng}
                        alt       ="Close popup"
                        className ="add-list__popup-close-btn"
@@ -62,7 +66,7 @@ const AddButton = ({colors, onAdd}) => {
                            {colors.map((color) => (
                                <li key={color.id}>
                                    <Badge
-                                       onClick={() => setColor(color.id)}
+                                       onClick   ={() => setColor(color.id)}
                                        color     ={color.name}
                                        className ={getColor === color.id && 'active'}
                                    />
@@ -72,7 +76,7 @@ const AddButton = ({colors, onAdd}) => {
                    </div>
 
                    <button
-                       onClick={addList}
+                       onClick  ={addList}
                        className="button">
                        Add list..
                    </button>
