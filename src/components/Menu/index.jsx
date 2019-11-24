@@ -5,8 +5,6 @@ import removePng from "../../assets/img/remove.png";
 
 import './menu.scss';
 
-
-
 const Menu = ({items, isRemovable, onClick, onRemove}) => {
 
     const removeList = (item) => {
