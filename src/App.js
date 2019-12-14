@@ -52,7 +52,9 @@ const onAddList = (obj) => {
             </div>
 
             <div className="todo__tasks">
-                <Tasks/>
+                <Tasks
+
+                />
             </div>
 
         </div>
