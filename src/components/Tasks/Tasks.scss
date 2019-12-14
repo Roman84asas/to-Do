@@ -7,5 +7,23 @@
     line-height: 40px;
     padding-bottom: 20px;
     border-bottom: 1px solid #bfbfbf;
+
+    img {
+      opacity: 0.3;
+      cursor: pointer;
+      -webkit-transition: all 0.4s ease-in-out;
+      margin-left: 5px;
+      border-radius: 50%;
+      border: 1px solid #767676;
+      width: 20px;
+      height: 20px;
+      padding: 2px;
+      margin-bottom: -5px;
+
+      &:hover {
+        opacity: 0.1;
+        -webkit-transition: all 0.4s ease-in-out;
+      }
+    }
   }
 }
