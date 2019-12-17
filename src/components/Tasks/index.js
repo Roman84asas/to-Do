@@ -34,6 +34,7 @@ const Tasks = () => {
                             </svg>
                         </label>
                     </div>
+                    <p>ReactJS Hooks (useState, useReducer, useEffect и т.д.)</p>
                 </div>
             </div>
         </div>
