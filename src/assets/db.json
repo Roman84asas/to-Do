@@ -7,15 +7,30 @@
     { "id": 5, "name": "Tasks", "colorId": 1 }
   ],
   "tasks": [
-    { "id": 1, "listId": 2, "text": "Learn JavaScript" },
-    { "id": 2, "listId": 2, "text": "Learn design pattern" },
+    {
+      "id": 1,
+      "listId": 2,
+      "text": "Learn JavaScript",
+      "completed": true,
+    },
+    {
+      "id": 2,
+      "listId": 2,
+      "text": "Learn design pattern",
+      "completed": true,
+    },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)"
+      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "completed": true
     },
-    { "id": 4, "listId": 2, "text": "Redux (redux-observable, redux-saga)" }
-  ],
+    {
+      "id": 4,
+      "listId": 2,
+      "text": "Redux (redux-observable, redux-saga)",
+      "completed": true
+    }],
   "colors": [
     { "id": 1, "hex": "#C9D1D3", "name": "grey" },
     { "id": 2, "hex": "#42B883", "name": "green" },
