@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import addPng from "../../assets/img/add.png";
 import cancelPng from "../../assets/img/cancel.png";
 import Menu from "../Menu";
@@ -11,7 +11,14 @@ import './AddButton.scss';
 const AddButton = ({colors, onAdd}) => {
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [inputValue, setInputValue]     = useState('');
-    const [getColor, setColor]            = useState(colors[0].id);
+    const [getColor, setColor]            = useState(3);
+
+    useEffect(() => {
+        if (Array.isArray(colors)) {
+            setColor(colors[0].id);
+        }
+    }, [colors]);
+
 
     const onClose = () => {
         setVisiblePopup(false);

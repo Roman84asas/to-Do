@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Menu from './components/Menu';
 import AddButton from "./components/AddButton";
 import Tasks from "./components/Tasks";
@@ -12,12 +13,21 @@ import './index.scss';
 
 
 function App() {
+
+
 const [lists, setLists] = useState(
     db.lists.map(item => {
         item.color = db.colors.filter(color => color.id === item.colorId)[0].name;
         return item;
     }
 ));
+
+useEffect(() => {
+    axios.get(' http://localhost:3001/lists?_expand=color').then(({data}) => {
+
+    });
+}, []);
+
 
 const onAddList = (obj) => {
     const newList = [
