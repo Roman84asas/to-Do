@@ -25,7 +25,7 @@ const [lists, setLists] = useState(
 const[colors, setColors] = useState(null);
 
 useEffect(() => {
-    axios.get('http://localhost:3001/lists?_expand=color').then(({data}) => {
+    axios.get('http://localhost:3001/lists?_expand=colors').then(({data}) => {
         setLists(data);
     });
     axios.get('http://localhost:3001/colors').then(({data}) => {
@@ -64,7 +64,7 @@ const onAddList = (obj) => {
 
                 <AddButton
                     onAdd={onAddList}
-                    colors={db.colors}
+                    colors={colors}
                 />
             </div>
 

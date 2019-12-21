@@ -32,14 +32,17 @@ const AddButton = ({colors, onAdd}) => {
             alert('Enter list`s name');
             return;
         }
-        const color = colors.filter(color => color.id === getColor)[0].name;
+
         axios.post('http://localhost:3001/lists', {
-            name: inputValue, colorId: color
+            name: inputValue,
+            colorId: getColor
         })
         .then(({data}) => {
-
+            const color = colors.filter(color => color.id === getColor)[0].name;
+            const listObj = {...data, color: {name:color}};
+            onAdd(listObj);
         });
-        //onAdd();
+
         onClose();
     };
 
