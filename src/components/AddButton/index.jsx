@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import addPng from "../../assets/img/add.png";
 import cancelPng from "../../assets/img/cancel.png";
 import Menu from "../Menu";
@@ -32,7 +33,13 @@ const AddButton = ({colors, onAdd}) => {
             return;
         }
         const color = colors.filter(color => color.id === getColor)[0].name;
-        onAdd({id: Math.random(), name: inputValue, color: color});
+        axios.post('http://localhost:3001/lists', {
+            name: inputValue, colorId: color
+        })
+        .then(({data}) => {
+
+        });
+        //onAdd();
         onClose();
     };
 

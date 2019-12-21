@@ -22,9 +22,14 @@ const [lists, setLists] = useState(
     }
 ));
 
-useEffect(() => {
-    axios.get(' http://localhost:3001/lists?_expand=color').then(({data}) => {
+const[colors, setColors] = useState(null);
 
+useEffect(() => {
+    axios.get('http://localhost:3001/lists?_expand=color').then(({data}) => {
+        setLists(data);
+    });
+    axios.get('http://localhost:3001/colors').then(({data}) => {
+        setColors(data);
     });
 }, []);
 
