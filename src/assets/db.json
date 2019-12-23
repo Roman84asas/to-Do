@@ -24,11 +24,6 @@
       "id": 5,
       "name": "Tasks",
       "colorId": 1
-    },
-    {
-      "name": "New task",
-      "colorId": 8,
-      "id": 6
     }
   ],
   "tasks": [
