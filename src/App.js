@@ -6,7 +6,7 @@ import Tasks from "./components/Tasks";
 import listSvg from './assets/img/list.svg'
 
 
-import db from './assets/db';
+
 
 
 import './index.scss';
