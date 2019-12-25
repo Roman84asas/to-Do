@@ -15,17 +15,11 @@ import './index.scss';
 function App() {
 
 
-const [lists, setLists] = useState(
-    db.lists.map(item => {
-        item.color = db.colors.filter(color => color.id === item.colorId)[0].name;
-        return item;
-    }
-));
-
+const[lists, setLists]   = useState(null);
 const[colors, setColors] = useState(null);
 
 useEffect(() => {
-    axios.get('http://localhost:3001/lists?_expand=colors').then(({data}) => {
+    axios.get('http://localhost:3001/lists?_expand=color').then(({data}) => {
         setLists(data);
     });
     axios.get('http://localhost:3001/colors').then(({data}) => {
@@ -56,23 +50,21 @@ const onAddList = (obj) => {
                     ]}
                 />
 
-                <Menu
-                    items={lists}
-                    isRemovable={true}
-                    onRemove={(item) => {}}
-                />
-
-                <AddButton
-                    onAdd={onAddList}
-                    colors={colors}
-                />
+                {lists ? (
+                    <Menu
+                        items={lists}
+                        onRemove={id => {
+                            const newLists = lists.filter(item => item.id !== id);
+                            setLists(newLists);
+                        }}
+                        isRemovable
+                    />
+                ) : (
+                    'Загрузка...'
+                )}
+                <AddButton onAdd={onAddList} colors={colors} />
             </div>
-
-            <div className="todo__tasks">
-                <Tasks
-
-                />
-            </div>
+            <div className="todo__tasks">{lists && <Tasks list={lists[1]} />}</div>
 
         </div>
 

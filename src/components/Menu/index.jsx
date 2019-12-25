@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 import classNames from 'classnames';
 import Badge from "../Badge";
 import removePng from "../../assets/img/remove.png";
@@ -9,7 +11,9 @@ const Menu = ({items, isRemovable, onClick, onRemove}) => {
 
     const removeList = (item) => {
         if (window.confirm('Do You really want to remove the list?')) {
-            onRemove(item);
+            axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
+                onRemove(item.id);
+            });
         }
     };
 
@@ -21,7 +25,7 @@ const Menu = ({items, isRemovable, onClick, onRemove}) => {
                         {item.icon ? (
                             <img src={item.icon} alt="Img list"/>
                         ) : (
-                            <Badge color={item.color}/>
+                            <Badge color={item.color.name}/>
                         )}
                     </i>
 
