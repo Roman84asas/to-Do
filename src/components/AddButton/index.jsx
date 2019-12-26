@@ -41,7 +41,7 @@ const AddButton = ({colors, onAdd}) => {
             colorId: getColor
         })
         .then(({data}) => {
-            const color = colors.filter(color => color.id === getColor)[0].name;
+            const color   = colors.filter(color => color.id === getColor)[0].name;
             const listObj = {...data, color: {name:color}};
             onAdd(listObj);
             onClose();
@@ -100,8 +100,8 @@ const AddButton = ({colors, onAdd}) => {
                    </div>
 
                    <button
-                       onClick  ={addList}
-                       className="button">
+                       onClick   ={addList}
+                       className ="button">
                        {isLoading ? 'Adding...' : 'Add list..'}
                    </button>
                </div>)
