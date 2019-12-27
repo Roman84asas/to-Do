@@ -7,7 +7,7 @@ import removePng from "../../assets/img/remove.png";
 
 import './menu.scss';
 
-const Menu = ({items, isRemovable, onClick, onRemove}) => {
+const Menu = ({items, isRemovable, onClick, onRemove, onClickItem, itemActive}) => {
 
     const removeList = (item) => {
         if (window.confirm('Do You really want to remove the list?')) {
@@ -20,7 +20,11 @@ const Menu = ({items, isRemovable, onClick, onRemove}) => {
     return (
         <ul onClick={onClick} className="list" >
             {items.map((item) => (
-                <li className={classNames(item.className, {'active': item.active})} key={item.id}>
+                <li
+                    onClick   = {onClickItem ? () => onClickItem(item) : null}
+                    className ={classNames(item.className, {'active': itemActive && itemActive.id === item.id})}
+                    key       ={item.id}
+                >
                     <i>
                         {item.icon ? (
                             <img src={item.icon} alt="Img list"/>
@@ -31,6 +35,7 @@ const Menu = ({items, isRemovable, onClick, onRemove}) => {
 
                     <span>
                         {item.name}
+                        {item.tasks && ` (${item.tasks.length})`}
                     </span>
 
                     {isRemovable &&

@@ -15,6 +15,7 @@ function App() {
 
 const[lists, setLists]   = useState(null);
 const[colors, setColors] = useState(null);
+const[itemActive, setItemActive] = useState(null);
 
 useEffect(() => {
     axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks')
@@ -56,6 +57,10 @@ const onAddList = (obj) => {
                             const newLists = lists.filter(item => item.id !== id);
                             setLists(newLists);
                         }}
+                        onClickItem={item => {
+                            setItemActive(item);
+                        }}
+                        itemActive={itemActive}
                         isRemovable
                     />
                 ) : (
@@ -67,7 +72,7 @@ const onAddList = (obj) => {
             </div>
 
             <div className="todo__tasks">
-                {lists && <Tasks list={lists[1]} />}
+                {lists && itemActive && <Tasks list={itemActive} />}
             </div>
 
         </div>
