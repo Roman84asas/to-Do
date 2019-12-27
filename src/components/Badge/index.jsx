@@ -8,7 +8,8 @@ const Badge = ({color, onClick, className}) => {
     return (
         <i
             onClick={onClick}
-            className={classNames('badge', { [`badge--${color}`]: color }, className) }>
+            className={classNames('badge', { [`badge--${color}`]: color }, className) }
+        >
         </i>
      )
 };
