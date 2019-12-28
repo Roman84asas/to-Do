@@ -36,6 +36,16 @@ const onAddList = (obj) => {
     setLists(newList);
 };
 
+const onEditListTitle = (id, title) => {
+    const newList = lists.map(item => {
+        if (item.id === id) {
+            item.name = title;
+        }
+        return item;
+    });
+    setLists(newList);
+};
+
     return (
 
         <div className="todo">
@@ -72,7 +82,12 @@ const onAddList = (obj) => {
             </div>
 
             <div className="todo__tasks">
-                {lists && itemActive && <Tasks list={itemActive} />}
+                {lists && itemActive && (
+                    <Tasks
+                        list={itemActive}
+                        onEditTitle={onEditListTitle}
+                    />
+                )}
             </div>
 
         </div>
