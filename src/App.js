@@ -36,6 +36,16 @@ const onAddList = (obj) => {
     setLists(newList);
 };
 
+const onAddTask = (listId, taskObj) => {
+    const newList = lists.map(item => {
+        if (item.id === listId) {
+            item.tasks = [...item.tasks, taskObj];
+        }
+        return item;
+    });
+    setLists(newList);
+};
+
 const onEditListTitle = (id, title) => {
     const newList = lists.map(item => {
         if (item.id === id) {
@@ -84,8 +94,9 @@ const onEditListTitle = (id, title) => {
             <div className="todo__tasks">
                 {lists && itemActive && (
                     <Tasks
-                        list={itemActive}
+                        list       ={itemActive}
                         onEditTitle={onEditListTitle}
+                        onAddTask  = {onAddTask}
                     />
                 )}
             </div>

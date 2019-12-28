@@ -27,6 +27,42 @@
       }
     }
   }
+
+  &__form {
+    margin-top: 50px;
+
+    &-add {
+      .button {
+        margin-right: 15px;
+        margin-top: 25px;
+      }
+    }
+
+    &-new {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover {
+        opacity: 0.8;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      img {
+        min-width: 18px;
+        height: 18px;
+        margin-left: 5px;
+      }
+
+      span {
+        font-size: 16px;
+        margin-left: 20px;
+      }
+    }
+  }
+
   &__items {
     margin-top: 30px;
 
