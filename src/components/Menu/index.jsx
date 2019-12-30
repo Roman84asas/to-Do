@@ -19,11 +19,17 @@ const Menu = ({items, isRemovable, onClick, onRemove, onClickItem, itemActive}) 
 
     return (
         <ul onClick={onClick} className="list" >
-            {items.map((item) => (
+            {items.map((item, index) => (
                 <li
                     onClick   = {onClickItem ? () => onClickItem(item) : null}
-                    className ={classNames(item.className, {'active': itemActive && itemActive.id === item.id})}
-                    key       ={item.id}
+                    className ={
+                        classNames(item.className, {
+                            'active': item.active
+                            ? item.active
+                            : itemActive && itemActive.id === item.id
+                        })
+                    }
+                    key={index}
                 >
                     <i>
                         {item.icon ? (
