@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-
 import AddTaskForm from './AddTaskForm';
-
 
 import editSvg from "../../assets/img/edit.svg";
 
@@ -43,7 +41,6 @@ const Tasks = ({
 
             <div className="tasks__items">
                 {!withoutEmpty && list.tasks && !list.tasks.length && <h2>Tasks not found!</h2>}
-
                 {list.tasks && list.tasks.map((task, index) => (
                    <Task key       ={index}
                          list      ={list}
@@ -53,7 +50,6 @@ const Tasks = ({
                          {...task}
                     />
                 ))}
-
                 <AddTaskForm
                     list      ={list}
                     onAddTask ={onAddTask}
