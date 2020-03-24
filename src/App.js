@@ -33,6 +33,7 @@ const onAddList = (obj) => {
     ];
     setLists(newList);
 };
+
 const onAddTask = (listId, taskObj) => {
     const newList = lists.map(item => {
         if (item.id === listId) {
