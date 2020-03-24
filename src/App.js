@@ -7,9 +7,7 @@ import AddButton from "./components/AddButton";
 import Tasks from "./components/Tasks";
 import listSvg from './assets/img/list.svg'
 
-
 import './index.scss';
-
 
 function App() {
 const[lists, setLists]           = useState(null);
