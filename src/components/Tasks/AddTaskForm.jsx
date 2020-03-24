@@ -57,14 +57,12 @@ const AddTaskForm = ({ list, onAddTask }) => {
                         value       ={inputValue}
                         onChange    ={e => setInputValue(e.target.value)}
                     />
-
                     <button
                         disabled={isLoading}
                         onClick   ={addTask}
                         className ="button">
                         {isLoading ? 'Adding task...' : 'Add task..'}
                     </button>
-
                     <button
                         onClick   ={toggleForm}
                         className ="button button--grey">
